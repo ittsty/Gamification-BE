@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { users } from 'src/mock/db';
+import { rewardHistory, users } from 'src/mock/db';
 
 @Injectable()
 export class UsersService {
@@ -9,10 +9,16 @@ export class UsersService {
     if (!user) {
       throw new NotFoundException('User not found');
     }
-
+    const history = rewardHistory
+      .filter((h) => h.uid === uid)
+      .map((h) => ({
+        id: h.rewardid,
+        created_at: h.created_at,
+      }));
     return {
       uid: user.uid,
-      totalpoint: user.totalpoint
+      totalpoint: user.totalpoint,
+      history,
     };
   }
 }
