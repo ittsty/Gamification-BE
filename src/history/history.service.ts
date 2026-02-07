@@ -1,20 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { playHistory } from 'src/mock/db';
 
 @Injectable()
 export class HistoryService {
   getPlayHistory() {
-    return [
-      {
-        id: 'ph_001',
-        point: 500,
-        created_at: '2024-01-10',
-      },
-      {
-        id: 'ph_002',
-        point: 300,
-        created_at: '2024-01-12',
-      },
-    ];
+    return playHistory
   }
 
   getRewardHistory() {

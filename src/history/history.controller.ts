@@ -7,11 +7,11 @@ export class HistoryController {
 
   @Get("play")
   getPlayHistory() {
-    return this.historyService.getPlayHistory();
+    return {data:this.historyService.getPlayHistory()}
   }
 
   @Get("reward")
   getRewardHistory() {
-    return this.historyService.getRewardHistory();
+    return {data:this.historyService.getRewardHistory()}
   }
 }
