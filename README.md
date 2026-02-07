@@ -18,7 +18,8 @@ $ npm run start:prod
 ```
 
 ## About API spec and route
-ตัวอย่าง >> n4esm4vgdf.apidog.io <<
+ตัวอย่าง >> https://n4esm4vgdf.apidog.io/ <<
+
 on production : https://nextzy-assessment-backend.onrender.com
 
 GET /history/point
