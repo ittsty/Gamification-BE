@@ -4,10 +4,14 @@ import { rewardHistory, users } from 'src/mock/db';
 @Injectable()
 export class UsersService {
   getUserPoint(uid: string) {
-    const user = users.find((u) => u.uid === uid);
+    let user = users.find((u) => u.uid === uid);
 
     if (!user) {
-      throw new NotFoundException('User not found');
+      user = {
+        uid,
+        totalpoint: 0,
+      };
+      users.push(user);
     }
     const history = rewardHistory
       .filter((h) => h.uid === uid)
