@@ -40,4 +40,7 @@ export class RedeemService {
       created_at: record.created_at,
     };
   }
+  viewReward(){
+    return rewards
+  }
 }
